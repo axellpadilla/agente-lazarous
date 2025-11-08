@@ -12,18 +12,20 @@ import dotenv
 
 class RAGSignature(dspy.Signature):
     """Firma para respuesta de preguntas basada en RAG"""
-    context = dspy.InputField(desc="Relevant context from knowledge base")
-    question = dspy.InputField(desc="User's question")
-    answer = dspy.OutputField(desc="Answer based on the context")
+    context = dspy.InputField(
+        desc="Contexto relevante de la base de conocimiento")
+    question = dspy.InputField(desc="Pregunta del usuario")
+    answer = dspy.OutputField(desc="Respuesta basada en el contexto")
 
 
 class TransferDecisionSignature(dspy.Signature):
     """Firma para decidir si la pregunta necesita transferencia de agente"""
-    question = dspy.InputField(desc="User's question")
-    search_result = dspy.InputField(desc="Result from knowledge base search")
+    question = dspy.InputField(desc="Pregunta del usuario")
+    search_result = dspy.InputField(
+        desc="Resultado de la búsqueda en la base de conocimiento")
     should_transfer = dspy.OutputField(
-        desc="Whether to transfer to human agent (Si/No)")
-    reason = dspy.OutputField(desc="Reason for the decision")
+        desc="Si transferir a agente humano (Sí/No)")
+    reason = dspy.OutputField(desc="Razón de la decisión")
 
 
 class LazarusChatbot:
@@ -104,7 +106,7 @@ class LazarusChatbot:
             "transfer_reason": ""
         }
 
-        # Manejo de saludos o conversación casual sin disparar transferencia
+        # Gestionar saludos o conversación casual sin activar transferencia
         if not search_result and self._is_small_talk(question):
             response["answer"] = self._small_talk_reply(question)
             response["source"] = "small_talk"
@@ -113,17 +115,17 @@ class LazarusChatbot:
         if search_result:
             # Se encontró información relevante
             if self.rag_module:
-                # Usar DSPy para generar respuesta contextual
+                # Usar DSPy para generar respuesta contextualizada
                 try:
                     context = f"Pregunta relacionada: {search_result['pregunta']}\nRespuesta: {search_result['respuesta']}"
                     result = self.rag_module(
                         context=context, question=question)
                     response["answer"] = result.answer
                 except Exception as e:
-                    # Fallback a respuesta directa
+                    # Respuesta de respaldo directo
                     response["answer"] = search_result['respuesta']
             else:
-                # Modo fallback - usar respuesta directa
+                # Modo de respaldo - usar respuesta directa
                 response["answer"] = search_result['respuesta']
 
             response["source"] = f"FAQ - Categoría: {search_result['categoria']}"
@@ -138,7 +140,7 @@ class LazarusChatbot:
                     response["answer"] = result.answer
                     response["source"] = "LLM"
 
-                    # Decidir si transferir
+                    # Determinar si transferir a agente
                     if self.transfer_module:
                         transfer_result = self.transfer_module(
                             question=question,
@@ -153,7 +155,7 @@ class LazarusChatbot:
                             response["transfer_reason"] = transfer_result.reason
                             self._simulate_transfer(question)
                 except Exception as e:
-                    # Fallback a transferencia
+                    # Respaldo a transferencia
                     response["transfer_to_agent"] = True
                     response["transfer_reason"] = "Error al generar respuesta con LLM"
                     response["answer"] = (
@@ -163,7 +165,7 @@ class LazarusChatbot:
                     response["source"] = "transfer"
                     self._simulate_transfer(question)
             else:
-                # Sin LLM, transferir
+                # Sin LLM, proceder a transferencia
                 if self._is_small_talk(question):
                     response["answer"] = self._small_talk_reply(question)
                     response["source"] = "small_talk"
