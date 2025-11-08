@@ -114,7 +114,7 @@ Crear un archivo `.env` con las siguientes variables:
 OPENROUTER_API_KEY=tu_api_key_aqui
 
 # Modelo a utilizar (opcional, default: openai/gpt-3.5-turbo)
-MODEL=openai/gpt-3.5-turbo
+OPENROUTER_CHAT_MODEL=openai/gpt-3.5-turbo
 ```
 
 ### Obtener API Key de OpenRouter

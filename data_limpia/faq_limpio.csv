@@ -1,0 +1,17 @@
+pregunta,respuesta,categoria,limpiar,razon_para_la_limpieza_(escenario_de_practica)
+¿Qué es ADMIX IM-1?,Es un producto para solucionar problemas de humedad ascendente en paredes.,Productos,No,Correctamente formateado.
+¿Dónde se encuentra la sede principal de Lazarus?,La Sede Corporativa y Principal está en San Pedro Sula.,Ubicaciones,No,Correctamente formateado.
+¿Cuál es el horario de atención?,Nuestro horario es Lunes a Viernes 7:30 AM - 4:30 PM; Sábados 8:00 AM - 12:00 PM.,Contacto,No,Correctamente formateado.
+¿Qué son los aditivos que USAMOS?,Aditivos químicos especializados para la construcción.,Productos,Sí,Inconsistencia de Caso (Pregunta): La pregunta tiene una parte en mayusculas.
+¿Puedo solicitar crédito para mis compras?,,Servicios,Sí,Valores Nulos (NaN): La respuesta está vacía (NaN). Se debe imputar con 'No Disponible' o 'Revisar Sección de Crédito'.
+¿Con qué marca de herrameintas trabajan?,Trabajamos con HILTI y ofrecemos servicio LTS.,Productos,Sí,"Error de Tipeo/Consistencia: 'herrameintas' debe ser 'herramientas'. 'HILTI' debe ser normalizado a 'Hilti', que significa LTS?."
+¿Cuáles son los teléfonos de contacto en SPS?,Tel: +504 2570-7 750 / Cel: 3391-9 803,Contacto,Sí,"Consistencia/Formato (Respuesta): Los números de teléfono deben ser estandarizados (ej. solo números, sin espacios, o formato (504) XXXX-XXXX)."
+¿Qué es TPO?,"Es un sistema de impermeabilización de FireStone que hemos usado en más de 60,000 m².",Marcas,No,Correctamente formateado.
+¿dónde están en tegucigalpa?,"Complejo de Bodegas El Rincón, Col. 21 de Octubre.",UBICACIONES,Sí,Inconsistencia de Caso (Categoría/Pregunta): Categoría en mayúsculas (UBICACIONES). Pregunta en minúsculas.
+¿Pueden mantener mis equipos Hilti?,"Sí, ofrecemos el servicio LTS con expertos.",Servicios,No,Correctamente formateado.
+¿Quién es el Arq. Milisen Delgado?,Encargada de Acabados del Hotel A Loft (cliente).,Testimonios,No,Correctamente formateado.
+¿Pueden mantener mis equipos Hilti?,"Sí, ofrecemos el servicio LTS con expertos.",Servicios,Sí,Duplicado (Funcional): Duplicado exacto del registro 10. Debe eliminarse para asegurar la Unicidad.
+¿Qué marcas distribuyen además de Hilti?,"Trimble, Reed  NovoMix. Maccaferri. Fiori, y Mirafi (Tencate).",Marcas,Sí,Inconsistencia de Formato (Respuesta): Los nombres de las marcas deben ser separados consistentemente (ej. una lista o comas con espacio).
+¿Necesito registro para la biblioteca?,,Biblioteca,Sí,Valores Nulos (NaN): Respuesta vacía. Este es un caso de imputación crítico.
+¿Dónde se ubica la tienda de Prado Alto?,"10 Ave. 17 Calle S.O., No.171 Ave. Circunvalación, Col. Prado Alto.",UBICACIONES,Sí,Inconsistencia de Caso (Categoría): Categoría en mayúsculas (UBICACIONES).
+¿Quienes son?,"Por más de 30 años, Lazarous y Lazarous ha sido un pionero en Honduras y la región centroamericana, marcando la pauta como desarrollador, fabricante y suplidor de materiales y equipos especializados para la industria y la construcción.",Descripcion,Sí,Esta mal el nombre de la empresa.
