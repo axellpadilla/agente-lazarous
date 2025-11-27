@@ -57,6 +57,11 @@
 | **Scikit-Learn** | Librería de ML para Python. | Implementación de regresiones, árboles y métricas (MSE). |
 | **GitHub** | Repositorio de código. | Control de versiones y distribución del código corregido. |
 
+Vimos que utilizan:
+https://www.zenvia.com/es-mx/
+https://www.zoho.com/es-xl/crm/
+
+
 ## 📌 Próximos Pasos
 
 1. **Todos:** Filtrar productos para el MVP usando las reglas de Coeficiente de Variación y Longitud de Serie.
